@@ -11,6 +11,10 @@
 
 @foreach (var rainfall in Model.Rainfalls){
     <h2>@rainfall.title</h2>
-    <p>@rainfall.dimensions.time.data[0]</p>
-    <p>@rainfall.variables.precipitation.data[0]</p>
+   
+    @for(int i = 0; i < rainfall.dimensions.time.data.Length; i++)
+    {
+        <p>@rainfall.dimensions.time.data[i] = @rainfall.variables.precipitation.data[i]</p>
+    }
+   // 0.0004 is very light rain.
 }
