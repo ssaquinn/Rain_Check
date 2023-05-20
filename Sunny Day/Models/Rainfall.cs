@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sunny_Day.wwwroot.Models
+namespace Sunny_Day.Models
 {
     public class Rainfall
     {

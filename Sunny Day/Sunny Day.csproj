@@ -7,4 +7,9 @@
     <RootNamespace>Sunny_Day</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Include="Models\Rainfall.cs" />
+    <Content Include="Services\JsonFileRainfallService.cs" />
+  </ItemGroup>
+
 </Project>
