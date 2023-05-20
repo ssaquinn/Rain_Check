@@ -4,7 +4,30 @@ namespace Sunny_Day.Models
 {
     public class Rainfall
     {
-        public double[] rainfall { get; set; }
-        public DateTime[] timeOfDay { get; set; }
+        public string title { get; set; }
+
+        public Dimensions dimensions { get; set; }
+        public Variables variables { get; set; }
+
+    }
+
+    public class Dimensions {
+        public Time time { get; set; }
+      
+    }
+
+    public class Time
+    {
+        public DateTime[] data { get; set; }
+    }
+
+    public class Variables
+    {
+        public Precipitation precipitation { get; set; }
+    }
+
+    public class Precipitation
+    {
+        public double[] data { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 [
   {
+    "title": "Day1",
     "dimensions": {
       "point": {
         "type": "point",
@@ -52,7 +53,7 @@
       "INVALID_LOW": 3
     },
     "variables": {
-      "precipitation.rate": {
+      "precipitation": {
         "standardName": "lwe_precipitation_rate",
         "units": "millimeterPerHour",
         "siUnits": "mm.hr^{-1}",
@@ -118,6 +119,7 @@
     }
   },
   {
+    "title":  "Day2",
     "dimensions": {
       "point": {
         "type": "point",
@@ -170,7 +172,7 @@
       "INVALID_LOW": 3
     },
     "variables": {
-      "precipitation.rate": {
+      "precipitation": {
         "standardName": "lwe_precipitation_rate",
         "units": "millimeterPerHour",
         "siUnits": "mm.hr^{-1}",
