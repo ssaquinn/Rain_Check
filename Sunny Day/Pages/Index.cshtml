@@ -12,9 +12,17 @@
 @foreach (var rainfall in Model.Rainfalls){
     <h2>@rainfall.title</h2>
    
+     
+
     @for(int i = 0; i < rainfall.dimensions.time.data.Length; i++)
     {
-        <p>@rainfall.dimensions.time.data[i] = @rainfall.variables.precipitation.data[i]</p>
+        if (@rainfall.variables.precipitation.data[i] >= 0.05)
+        {
+            <p>@rainfall.dimensions.time.data[i] = Rain</p>
+        } else
+        {
+             <p>@rainfall.dimensions.time.data[i] = Sunny</p>
+        }
     }
-   // 0.0004 is very light rain.
+   //  >0.5mm = sunny
 }
