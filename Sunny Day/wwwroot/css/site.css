@@ -16,3 +16,22 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.border-line {
+    border-bottom: 1px solid #6ca6e0;
+}
+
+.weather-graph {
+    display: flex;
+    justify-content: center;
+}
+
+.sun-box {
+    background-color: yellow;
+    border-bottom: 1px solid #6ca6e0;
+}
+
+.rain-box {
+   
+    border-bottom: 1px solid #6ca6e0;
+}

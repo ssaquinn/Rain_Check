@@ -5,24 +5,33 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4" style="color:#6ca6e0;">Welcome</h1>
 </div>
-
-@foreach (var rainfall in Model.Rainfalls){
-    <h2>@rainfall.title</h2>
-   
-     
-
+<div class="border-line"></div>
+<div>
+    @foreach (var rainfall in Model.Rainfalls){
+    <div class="weather-graph">
     @for(int i = 0; i < rainfall.dimensions.time.data.Length; i++)
     {
         if (@rainfall.variables.precipitation.data[i] >= 0.05)
-        {
-            <p>@rainfall.dimensions.time.data[i] = Rain</p>
+
+        {<div class="rain-bar"><div>
+            <p class="rain-box">Rain</p>
+        </div><div> 
+            <p class="time-of-day">@rainfall.dimensions.time.data[i].ToString("H:mm")</p></div></div>
         } else
-        {
-             <p>@rainfall.dimensions.time.data[i] = Sunny</p>
+        {<div class="rain-bar"><div>
+            <p class="sun-box">Sunny</p>
+        </div><div class="time-of-day">
+                            <p>@rainfall.dimensions.time.data[i].ToString("H:mm")</p>
+                        </div>
+                    </div>
         }
     }
+    </div>
+   
+    
+        <div class="selected-day"> <h2>@rainfall.title</h2> </div>}
+    </div>
    //  >0.5mm = sunny
 }
