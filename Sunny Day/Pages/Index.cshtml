@@ -9,29 +9,72 @@
 </div>
 <div class="border-line"></div>
 <div>
-    @foreach (var rainfall in Model.Rainfalls){
-    <div class="weather-graph">
-    @for(int i = 0; i < rainfall.dimensions.time.data.Length; i++)
-    {
-        if (@rainfall.variables.precipitation.data[i] >= 0.05)
-
-        {<div class="rain-bar"><div>
-            <p class="rain-box">Rain</p>
-        </div><div> 
-            <p class="time-of-day">@rainfall.dimensions.time.data[i].ToString("H:mm")</p></div></div>
-        } else
-        {<div class="rain-bar"><div>
-            <p class="sun-box">Sunny</p>
-        </div><div class="time-of-day">
-                            <p>@rainfall.dimensions.time.data[i].ToString("H:mm")</p>
+    @foreach (var rainfall in Model.Rainfalls)
+    { int currentCount = 0;
+                int longestCount = 0;
+                string currentStartTime = "";
+                string longestStartTime = "";
+                string currentEndTime = "";
+                string longestEndTime = "";
+         
+        <div class="weather-graph">
+            @for (int i = 0; i < rainfall.dimensions.time.data.Length; i++)
+            {
+               
+                string time = @rainfall.dimensions.time.data[i].Hour.ToString();
+                if (@rainfall.variables.precipitation.data[i] >= 0.05)
+                {
+                    <div class="rain-bar">
+                        <div>
+                            <p class="rain-box">Rain</p>
+                        </div><div>
+                            <p class="time-of-day">@time</p>
                         </div>
                     </div>
-        }
+                }
+                else
+                {
+                    <div class="rain-bar">
+                        <div>
+                            <p class="sun-box">Sunny</p>
+                        </div><div class="time-of-day">
+                            <p>@time</p>
+                        </div>
+                    </div>
+
+                    int previousItem = 0;
+                    if (i > 0)
+                    {
+                        previousItem = i - 1;
+                    }
+                   
+                    if (@rainfall.variables.precipitation.data[previousItem]
+                        < 0.05)
+                {
+                        currentCount++;
+                        currentEndTime = @time;
+                    }
+                    else
+                    {
+                        currentCount = 1;
+                        currentStartTime = @time;
+                        currentEndTime = @time;
+                    }
+                    if (currentCount >= longestCount)
+                    {
+                        longestCount = currentCount;
+                        longestStartTime = currentStartTime;
+                        longestEndTime = currentEndTime;
+                    }
+                }
+            }
+        </div>
+       
+
+        <div class="selected-day"> <h2>@rainfall.title</h2> </div>
+        <div>Greatest Sunny Period: @longestCount hours @longestStartTime - @longestEndTime</div>
     }
-    </div>
-   
-    
-        <div class="selected-day"> <h2>@rainfall.title</h2> </div>}
-    </div>
-   //  >0.5mm = sunny
+</div>
+@{
+    //  >0.5mm = sunny}
 }
