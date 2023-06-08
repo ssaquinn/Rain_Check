@@ -22,8 +22,7 @@ namespace Sunny_Day.Pages
 
         public void OnGet()
         {
-            Rainfalls = RainfallService.GetRainfall();
-
+            Rainfalls = RainfallService.GetDailyRainfall();
         }
     }
 }

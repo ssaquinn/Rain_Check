@@ -16,13 +16,12 @@
                 string longestStartTime = "";
                 string currentEndTime = "";
                 string longestEndTime = "";
-         
+
         <div class="weather-graph">
             @for (int i = 0; i < rainfall.dimensions.time.data.Length; i++)
             {
-               
                 string time = @rainfall.dimensions.time.data[i].Hour.ToString();
-                if (@rainfall.variables.precipitation.data[i] >= 0.05)
+                if (@rainfall.variables.precipitationRate.data[i] >= 0.05)
                 {
                     <div class="rain-bar">
                         <div>
@@ -48,9 +47,9 @@
                         previousItem = i - 1;
                     }
                    
-                    if (@rainfall.variables.precipitation.data[previousItem]
+                    if (@rainfall.variables.precipitationRate.data[previousItem]
                         < 0.05)
-                {
+                    {
                         currentCount++;
                         currentEndTime = @time;
                     }
@@ -71,8 +70,8 @@
         </div>
        
 
-        <div class="selected-day"> <h2>@rainfall.title</h2> </div>
-        <div>Greatest Sunny Period: @longestCount hours @longestStartTime - @longestEndTime</div>
+         <div class="selected-day"> <h2>@rainfall.title</h2> </div>
+        <div>Greatest Sunny Period: @longestCount hours @longestStartTime - @longestEndTime</div> 
     }
 </div>
 @{

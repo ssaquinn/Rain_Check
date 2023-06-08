@@ -8,8 +8,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Utilities\JsonKVArrayConverter.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="Models\Rainfall.cs" />
     <Content Include="Services\JsonFileRainfallService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Utilities\JsonKVArrayConverter.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
 </Project>
