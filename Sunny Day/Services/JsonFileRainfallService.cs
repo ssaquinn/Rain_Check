@@ -6,6 +6,8 @@ using Sunny_Day.Models;
 using Microsoft.Extensions.Configuration;
 using System.Text;
 using Newtonsoft.Json;
+using System.Runtime.Intrinsics.X86;
+using System;
 
 namespace Sunny_Day.Services
 {
@@ -23,17 +25,24 @@ namespace Sunny_Day.Services
             get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "mockdata.json"); }
         }
 
+        
+
+
         public IEnumerable<Rainfall> GetDailyRainfall()
         {
+            var startTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0);
+            var endTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 23, 59, 59);
+            var zone = TimeZoneInfo.FindSystemTimeZoneById("New Zealand Standard Time");
+           
             string url = $"http://forecast-v2.metoceanapi.com/point/time";
 
-            var iso8601StringStart = "2023-06-05T00:00:00Z";
-            DateTime dateISO8602Start = DateTime.ParseExact(iso8601StringStart, "yyyy-MM-ddTHH:mm:ssZ",
+            DateTime dateISO8602Start = DateTime.ParseExact(TimeZoneInfo.ConvertTimeFromUtc(startTime,zone).ToString("yyyy-MM-ddTHH:mm:ssZ"), "yyyy-MM-ddTHH:mm:ssZ",
                                             System.Globalization.CultureInfo.InvariantCulture);
 
-            var iso8601StringEnd = "2023-06-06T00:00:00Z";
-            DateTime dateISO8602End = DateTime.ParseExact(iso8601StringEnd, "yyyy-MM-ddTHH:mm:ssZ",
+           
+            DateTime dateISO8602End = DateTime.ParseExact(TimeZoneInfo.ConvertTimeFromUtc(endTime, zone).ToString("yyyy-MM-ddTHH:mm:ssZ"), "yyyy-MM-ddTHH:mm:ssZ",
                                             System.Globalization.CultureInfo.InvariantCulture);
+
 
             MetserviceRequestTemplate requestData = new MetserviceRequestTemplate();
 

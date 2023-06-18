@@ -32,6 +32,6 @@ namespace Sunny_Day.Models
     {
 
         
-        public double[]? data { get; set; }
+        public double?[] data { get; set; }
     }
 }
