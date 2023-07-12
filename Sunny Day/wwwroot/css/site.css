@@ -14,7 +14,8 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-image: url('C:\Users\ssaqu\source\repos\Sunny Day\Sunny Day\wwwroot\images\Sky.jpg');
 }
 
 .border-line {
@@ -34,4 +35,39 @@ body {
 .rain-box {
    
     border-bottom: 1px solid #6ca6e0;
+}
+
+.faded-bg {
+   
+    height: 400px;
+    position: relative;
+   
+
+}
+
+.faded-bg-image {
+ background-image: url("/images/skyCropped.jpg"); 
+ background-repeat:no-repeat;
+    background-size: 100vw 400px;
+
+    position: absolute;
+    height: 100%;
+    width: 100vw;
+    filter: blur(5px);
+    
+}
+.faded-bg-inner {
+    background-image: url("/images/skyCropped.jpg");
+    background-repeat: no-repeat;
+    background-size: 125vw 500px;
+    background-position: -12vw -115px;
+    height: 80%;
+    width: 80%;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+
+.over-color {
+    background-color: #4f4f4f;
 }
