@@ -17,9 +17,14 @@
         int longestStartTime = 0;
         int currentEndTime = 0;
         int longestEndTime = 0;
+        
+         
+
+       
         @*<div class="d-flex justify-content-evenly flex-row align-content-center">*@
-        <div class="weather-graph d-flex justify-content-evenly flex-row order-2">
-            
+        <div class="weather-graph d-flex justify-content-evenly flex-row">
+             
+            <div class="d-flex order-2">
             @for (int i = 0; i < rainfall.dimensions.time.data.Length; i++)
             {
                 int time = @rainfall.dimensions.time.data[i].Hour;
@@ -70,21 +75,21 @@
                         </p>
                     </div>
                 </div>
-            }
-        </div>
+            }</div>
 
-        <div class="d-flex order-3">
-            <div class="card">
+            <div class="card d-flex order-3">
                 <div class="selected-day"> <h2>@rainfall.title</h2> </div>
                 <div>@longestCount hrs </div>
             </div>
             <div class="card d-flex order-1">
                 <div>Monday</div>
-            <div>
-                @convertHour(longestStartTime, true) - @convertHour(longestEndTime, true)
-            </div></div>
-          
+                <div>
+                    @convertHour(longestStartTime, true) - @convertHour(longestEndTime, true)
+                </div>
+            </div>
         </div>
+
+       
 
     }
 </div>

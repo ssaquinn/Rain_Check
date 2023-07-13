@@ -31,6 +31,7 @@ namespace Sunny_Day.Services
                 var startTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day + i, 0, 0, 0);
                 var endTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day + i, 23, 59, 59);
                 var zone = TimeZoneInfo.FindSystemTimeZoneById("New Zealand Standard Time");
+             
 
                 string url = $"http://forecast-v2.metoceanapi.com/point/time";
 
