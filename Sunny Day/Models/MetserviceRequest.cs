@@ -3,7 +3,7 @@ namespace Sunny_Day.Models
 
     public class MetserviceRequestTemplate
     {
-        
+
         public List<LatLngArray> points { get; set; }
         public string[] variables { get; set; }
         public TimeIntervals time { get; set; }

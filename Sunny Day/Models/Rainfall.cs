@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
 
 namespace Sunny_Day.Models
 {
@@ -12,9 +11,10 @@ namespace Sunny_Day.Models
 
     }
 
-    public class Dimensions {
+    public class Dimensions
+    {
         public Time? time { get; set; }
-      
+
     }
 
     public class Time
@@ -31,7 +31,7 @@ namespace Sunny_Day.Models
     public class Precipitation
     {
 
-        
+
         public double?[] data { get; set; }
     }
 }

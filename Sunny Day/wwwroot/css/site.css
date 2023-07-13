@@ -46,21 +46,20 @@ body {
 }
 
 .faded-bg-image {
- background-image: url("/images/skyCropped.jpg"); 
- background-repeat:no-repeat;
-    background-size: 100vw 400px;
-
+    background-image: url("/images/skyCropped.jpg");
+    background-repeat: no-repeat;
+    background-size: 120vw 600px;
+    background-position: -1vw -200px;
     position: absolute;
     height: 100%;
     width: 100vw;
     filter: blur(5px);
-    
 }
 .faded-bg-inner {
     background-image: url("/images/skyCropped.jpg");
     background-repeat: no-repeat;
-    background-size: 125vw 500px;
-    background-position: -12vw -115px;
+    background-size: 100vw 500px;
+    background-position: -1vw -130px;
     height: 80%;
     width: 80%;
     position: absolute;
@@ -71,3 +70,18 @@ body {
 .over-color {
     background-color: #4f4f4f;
 }
+
+.rounded {
+    border-radius: 45%;
+}
+
+.headFont {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    font-size: 2.05em;
+}
+
+.rainCheckName {
+    padding: 1%;
+}
+

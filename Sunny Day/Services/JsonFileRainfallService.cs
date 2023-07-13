@@ -1,13 +1,7 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Net.Http.Headers;
-using System.Text.Json;
+﻿using Newtonsoft.Json;
 using Sunny_Day.Models;
-using Microsoft.Extensions.Configuration;
+using System.Net.Http.Headers;
 using System.Text;
-using Newtonsoft.Json;
-using System.Runtime.Intrinsics.X86;
-using System;
 
 namespace Sunny_Day.Services
 {
@@ -54,7 +48,7 @@ namespace Sunny_Day.Services
                 latLngArray.lat = -41.2;
                 latLngArray.lon = 174.9;
 
-                var latLngList = new List<LatLngArray>{latLngArray};
+                var latLngList = new List<LatLngArray> { latLngArray };
 
                 TimeIntervals time = new TimeIntervals();
                 time.from = dateISO8602Start;
@@ -97,12 +91,12 @@ namespace Sunny_Day.Services
                     };
 
                     var json = response.Content.ReadAsStringAsync().Result;
-                   yield return metserviceResponse = (JsonConvert.DeserializeObject<Rainfall>(json, deserialiserSettings));
+                    yield return metserviceResponse = (JsonConvert.DeserializeObject<Rainfall>(json, deserialiserSettings));
 
                 }
 
             }
-           
+
         }
     }
 }

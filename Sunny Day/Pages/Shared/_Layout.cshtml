@@ -7,19 +7,27 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Sunny_Day.styles.css" asp-append-version="true" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
 </head>
 <body>
     <div class="w-100 faded-bg">
-        <div class="opacity-50 faded-bg-image w-100"></div>
-        
-            <div class="opacity-100 faded-bg-inner w-80 h-80">
-                <div class="over-color opacity-25 w-100 h-100"></div>
-                <div></div>
+        <div class="opacity-75 faded-bg-image w-100 "></div>
+
+        <div class="opacity-100 faded-bg-inner w-80 h-80 rounded shadow-sm">
+            <div class="over-color opacity-25 w-100 h-100 rounded position-absolute z-n1"> </div>
+            <div class="headFont rainCheckName opacity-100">RAIN CHECK</div>
+            <div class="headFont opacity-100 d-flex flex-row align-content-center justify-content-evenly">
+                <div class="p-4 ">Best Day</div><div class="p-4">24hrs Sun</div><div class="p-4">All Day</div>
+
             </div>
-        
+        </div>
+
     </div>
+    
     
     <header>
        @* <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
