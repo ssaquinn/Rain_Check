@@ -24,12 +24,17 @@ namespace Sunny_Day.Services
 
         public IEnumerable<Rainfall> GetDailyRainfall()
         {
+            var startTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0);
+            var endTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 23, 59, 59);
+
             Rainfall metserviceResponse;
             for (int i = 0; i < 10; i++)
             {
 
-                var startTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day + i, 0, 0, 0);
-                var endTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day + i, 23, 59, 59);
+                
+                startTime.AddDays(1);
+                endTime.AddDays(1);
+                
                 var zone = TimeZoneInfo.FindSystemTimeZoneById("New Zealand Standard Time");
              
 
